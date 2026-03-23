@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="/static/script.js" defer></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Result</title>
+  </head>
+  <body>
+    <h2>Converted Text</h2>
+
+    <textarea rows="10" cols="50">{{ text }}</textarea>
+
+    <br /><br />
+
+    <button onclick="downloadText()">Download TXT</button>
+
+    <script>
+      function downloadText() {
+        let text = document.querySelector("textarea").value;
+        let blob = new Blob([text], { type: "text/plain" });
+        let link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "output.txt";
+        link.click();
+      }
+    </script>
+  </body>
+</html>

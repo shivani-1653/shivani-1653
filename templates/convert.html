@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Convert Notes</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+
+  <body>
+    <div class="form-section">
+      <form action="/process" method="POST" enctype="multipart/form-data">
+        <h2 class="title">Convert Your Notes</h2>
+
+        <label>Input Language:</label>
+        <select name="input_lang">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="ja">Japanese</option>
+          <option value="kn">Kannada</option>
+        </select>
+
+        <label>Output Language:</label>
+        <select name="output_lang">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="ja">Japanese</option>
+          <option value="kn">Kannada</option>
+        </select>
+
+        <label>Conversion Type:</label>
+        <select name="conversion">
+          <option value="h2t">Handwritten → Text</option>
+          <option value="t2h">Text → Handwritten</option>
+          <option value="t2t">Text → Text</option>
+          <option value="h2h">Handwritten → Handwritten</option>
+        </select>
+
+        <label>Upload Image:</label>
+        <input type="file" name="image" />
+
+        <label>Or Enter Text:</label>
+        <textarea name="text" rows="5"></textarea>
+
+        <button type="submit">Convert</button>
+      </form>
+    </div>
+  </body>
+</html>
